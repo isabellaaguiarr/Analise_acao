@@ -35,10 +35,7 @@ idx = df_top.groupby('base_ticker')['volume'].idxmax()
 # Filtra o DataFrame para manter apenas as linhas com os maiores volumes (que foram as encontradas pelo idx)
 df_top10 = df_top.loc[idx].reset_index(drop=True)
 
-
-
 # Preço corrigido: para cada uma das ações no df df_top10 - 10 maiores roe
-
 dataframes = []
 
 for acao in df_top10["ticker"]:
@@ -77,10 +74,8 @@ for acao in df_top10["ticker"]:
 # df com os tickers do top 10 roe e seus respectivos retornos
 df_final = pd.concat(dataframes,ignore_index=True)
 
-
 ############################################################################################################
    
-
 # Calcular o rendimento total da carteira de ações do top10 roe
 df_carteira_roe = df_final.copy()
 # Rendimento da carteira: cada ação representa 10%: multiplicar por 0.1
@@ -89,11 +84,9 @@ soma_total = df_carteira_roe['retorno'].sum()
 # Formatar para sair em porcentagem
 retorno_formatado_roe = f"{soma_total:.2f}%"  # Retorno da carteira de ações do top10 roe
 
-
 ###########################################################################################################
 
 # Calcular o IBOVESPA do período
-
 params_ibov = {
 'ticker': 'ibov',
 'data_ini': '2023-04-01',
@@ -116,9 +109,7 @@ df_final["resultado"] = np.where(
     np.where( df_final['retorno'] < df_final["Ibovespa"], "perde", "empata")
     )
 
-
 ##############################################################################################################
-
 
 # Magic Formula
 
@@ -156,7 +147,6 @@ df_final_sorted = df_merged.loc[id].reset_index(drop=True)
 
 df_final_sorted = df_final_sorted.sort_values(by="media", ascending=True).reset_index(drop=True)
 df_final_sorted = df_final_sorted.nsmallest(10,"media") # Só os top10 nos dois rankings 
-
 
 ##################################################################################################################
 
@@ -204,7 +194,6 @@ df_final_magic["resultado"] = np.where(
     np.where( df_final_magic['retorno'] < df_final_magic["Ibovespa"], "perde", "empata")
     )
 
-
 ####################################################################################################################
 
 #Rendimento total da carteira de ações oriundas do magic formula 
@@ -217,17 +206,14 @@ soma_total_magic = df_carteira_magic['retorno'].sum()
 # Formatar para sair em porcentagem:
 retorno_formatado_magic = f"{soma_total_magic:.2f}%"  # Retorno da carteira de ações do top10 magic
 
-
 ####################################################################################################################
 
-    # ROE
-
+# ROE
 print("Carteira de ações de acordo com o roe:")
 print(df_final)
 print("Retorno da carteira top10 roe:", retorno_formatado_roe)
 
-    #  MAGIC FORMULA
-
+#  MAGIC FORMULA
 print("Carteira de ações de acordo com a Magic Formula")
 print(df_final_magic)
 print("Retorno da carteira top10 MagicFormula:", retorno_formatado_magic)
