@@ -21,12 +21,12 @@ O projeto tem dois objetivos principais:
 
 Para executar este projeto, você precisará das seguintes bibliotecas Python:
 
-- requests
-- pandas
-- numpy
+- `requests`
+- `pandas`
+- `numpy`
 
 ## Colaboradores
-Ludmila Guedes (https://github.com/LudmilaGuedes/Analise_acao.git)
+Ludmila Guedes  (https://github.com/LudmilaGuedes/Analise_acao.git)
 
 Isabella Aguiar (https://github.com/isabellaaguiarr/Analise_acao.git)
 
