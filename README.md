@@ -1,6 +1,6 @@
 # Analise_acao
 
-Este projeto realiza uma análise financeira de ações brasileiras utilizando dados da *API do Laboratório de Finanças(https://laboratoriodefinancas.com/home). O foco principal é calcular o retorno das ações em comparação com o índice **Ibovespa* e aplicar a *Fórmula Mágica de Joel Greenblatt* para a seleção de ações.
+Este projeto realiza uma análise financeira de ações brasileiras utilizando dados da *API do Laboratório de Finanças(https://laboratoriodefinancas.com/home). O foco principal é calcular o retorno das ações em comparação com o índice **Ibovespa** e aplicar a *Fórmula Mágica de Joel Greenblatt* para a seleção de ações.
 
 ## Objetivo
 
